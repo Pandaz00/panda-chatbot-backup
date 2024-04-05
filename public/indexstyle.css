@@ -1,0 +1,204 @@
+/* Team Name:Panda Pioneers */
+
+@charset "UTF-8";
+
+/* Reset box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #005550;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Create horizontal navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #005550;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+header::after {
+    /* Pseudo-element selectors */
+    /* Add separator line under the navigator*/
+    content: '';
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    height: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Set Panda logo include image and text*/
+.logo {
+    margin-right: 5px;
+}
+
+.logo img {
+    height: 40px;
+    transform: scale(1.2);
+}
+
+.logo-text {
+    margin-right: auto;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Navigation bar adjustion */
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Define menu style */
+.menu li {
+    position: relative;
+    display: inline-block;
+}
+
+/* Define menu link style */
+.menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+}
+
+/* Define submenu style */
+.submenu {
+    display: none;
+    /* Initially hide the secondary menu */
+    position: absolute;
+    background-color: #000000;
+    z-index: 1;
+    /* Make sure submenu display uppermost */
+    width: 800px;
+    height: auto;
+    padding: 20px;
+    /* Add padding */
+    left: -20px;
+    /* Align the left border with the right side of the menu */
+    top: 0px;
+    /* Display from the top */
+}
+
+.submenu li {
+    /* Display each line of the submenu separately */
+    display: block;
+    margin-bottom: 20px;
+}
+
+.submenu li::after {
+    /* Add dashes to each line of the submenu */
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.menu li:hover .submenu {
+    display: block;
+    /* Display the word menu when the mouse hover */
+}
+
+/* Introduction*/
+h1 {
+    margin: 20px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 80px;
+    color: #f2ffcf;
+}
+
+h2 {
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 260px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    color: #339c90;
+}
+
+h4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: #003f3b;
+    margin: 0;
+}
+
+p {
+    line-height: 30px;
+}
+
+.introduction #project-description {
+    background-color: #f8ffe3;
+    padding: 30px;
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #003f3b;
+}
+
+/* Services */
+.service {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    color: #003f3b;
+}
+
+.service #ask-me-anything {
+    background-color: #dce2fa;
+    padding: 30px;
+    margin: 0;
+}
+
+#ask-me-anything {
+    column-count: 3;
+    /* Divide the text into three columns */
+    column-gap: 50px;
+    /* Sets the spacing between columns */
+}
+
+#ask-me-anything span {
+    display: block;
+    margin-bottom: 20px;
+    /* Sets the vertical spacing between items */
+    border-bottom: 1px solid #ccc;
+    /* Add underline */
+}
+
+/* Question and answer */
+.question {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #003f3b;
+}
+
+.question #question-and-answer {
+    background-color: #ceefff;
+    padding: 30px;
+    margin: 0;
+}
+
+/* Footer content*/
+.footer-content {
+    font-size: 15px;
+    color: #f2ffcf;
+    text-align: center;
+    margin-top: 30px;
+}
