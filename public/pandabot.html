@@ -13,24 +13,47 @@
 <header>
     <a href="index.html" class="logo"><img src="image/logo.png" alt="Logo"></a>
     <a href="pandabot.html" class="logo-text">Panda Chatbot</a>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Menu</a>
+                <ul class="submenu">
+                    <li><a href="pandabot.html">Panda Chatbot</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#project-description">About</a></li>
+                    <li><a href="index.html#ask-me-anything">Services</a></li>
+                    <li><a href="index.html#question-and-answer">Questions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="preferences.html">Preferences</a></li>
+                </ul>
+            </li>
+            <li><a href="signin.html">Sign in</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            <li><a href="pandahistory.html">Chat-history</a></li>
+        </ul>
+    </nav>
 </header>
 
-<body>
 
-    <body>
-        <div class="chat-container">
-            <div class="chat-box">
-                <div class="chat-message">
-                    <p>Welcome to Panda Chatbot! How can I assist you today?</p>
-                </div>
-                <!-- Placeholder for AI responses -->
+<body>
+    <div class="chat-container">
+        <div class="chatlog" id="chat-log">
+            <div class="chatMessage">
+                <div class="message received"></div>
+                <p id="welcome-message">Welcome to Panda Chatbot! How can I assist you today?</p>
             </div>
-            <div class="user-input">
-                <input type="text" placeholder="Type your message...">
-                <button>Send</button>
-            </div>
+            <!-- Placeholder for AI responses -->
         </div>
-    </body>
+        <div class="chat-input">
+            <input type="text" class="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <div id="loading-indicator">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="pandabot.js"></script>
 </body>
 
 <footer>

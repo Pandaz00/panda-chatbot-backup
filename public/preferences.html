@@ -13,18 +13,36 @@
 <header>
     <a href="index.html" class="logo"><img src="image/logo.png" alt="Logo"></a>
     <a href="pandabot.html" class="logo-text">Panda Chatbot</a>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Menu</a>
+                <ul class="submenu">
+                    <li><a href="pandabot.html">Panda Chatbot</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#project-description">About</a></li>
+                    <li><a href="index.html#ask-me-anything">Services</a></li>
+                    <li><a href="index.html#question-and-answer">Questions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="preferences.html">Preferences</a></li>
+                </ul>
+            </li>
+            <li><a href="signin.html">Sign in</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+        </ul>
+    </nav>
 </header>
 
 <body>
     <section>
         <h1>Preferences Setting</h1>
         <ul>
-            <li><a href="#">Language choice: English</a></li>
-            <li><a href="#">Language choice: Chinese</a></li>
-            <li><a href="#">Mode choice: Light</a></li>
-            <li><a href="#">Mode choice: Dark</a></li>
+            <li><a href="#" id="lightModeButton">Mode choice: Light</a></li>
+            <li><a href="#" id="darkModeButton">Mode choice: Dark</a></li>
         </ul>
     </section>
+
+    <script src="modechange.js"></script>
 </body>
 
 <footer>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to PandaBot! <span id="username"></span>!</h1>
+    <p>If you see this page, it means you are logged in!</p> <button class="button" onclick="logout()">Logout</button>
+    <button class="button" onclick="jumpTo()">Chat Now</button>
+
+    <!--this part, for how to display current user's data on page,
+    I had help with ChatGPT for this, it told me how should i deal with the token by using
+npm install jwt-decode, decode current user's token and get user's name
+ -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const decoded = jwt_decode(token);
+                const username = decoded.username;
+                document.getElementById('username').textContent = username;
+            }
+        });
+    </script>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.href = 'signin.html';
+        }
+
+        function jumpTo() {
+            window.location.href = 'pandabot.html';
+        }
+    </script>
+
+    <style>
+        .button {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: rgb(194, 190, 190);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px black;
+        }
+
+        .button:hover {
+            background-color: brown;
+        }
+
+        .button:active {
+            box-shadow: 1 2px black;
+            transform: translateY(3px);
+        }
+    </style>
+
+</body>
+
+</html>

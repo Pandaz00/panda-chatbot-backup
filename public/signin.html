@@ -9,15 +9,33 @@
 </head>
 
 <body>
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Menu</a>
+                <ul class="submenu">
+                    <li><a href="pandabot.html">Panda Chatbot</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#project-description">About</a></li>
+                    <li><a href="index.html#ask-me-anything">Services</a></li>
+                    <li><a href="index.html#question-and-answer">Questions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="preferences.html">Preferences</a></li>
+                </ul>
+            </li>
+            <li><a href="signin.html">Sign in</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+        </ul>
+    </nav>
+
     <p class="title">Sign in to Panda Chatbot</p>
     <div class="logo">
         <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
     </div>
 
     <div class="login-container">
-        <form action="#">
+        <form id="loginForm" action="#">
             <div class="input-group">
-                <label for="Email">Email</label>
+                <label for="email">Email</label>
                 <input type="text" id="email" name="email" required>
             </div>
             <div class="input-group">
@@ -27,6 +45,31 @@
             <button type="submit">Sign in</button>
         </form>
     </div>
+
+    <script src="modechange.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();// create event listener
+            fetch('/users/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: document.getElementById('email').value,
+                    password: document.getElementById('password').value
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        localStorage.setItem('token', data.token);
+                        window.location.href = 'dashboard.html';
+                    } else {
+                        alert('login failed :' + data.message);
+                    }
+                });
+        });
+    </script>
 </body>
 
 </html>

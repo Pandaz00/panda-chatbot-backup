@@ -65,6 +65,58 @@ header::after {
     margin: 0;
 }
 
+/* Define menu style */
+.menu li {
+    position: relative;
+    display: inline-block;
+}
+
+/* Define menu link style */
+.menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+}
+
+/* Define submenu style */
+.submenu {
+    display: none;
+    /* Initially hide the secondary menu */
+    position: absolute;
+    background-color: #000000;
+    z-index: 1;
+    /* Make sure submenu display uppermost */
+    width: 800px;
+    height: auto;
+    padding: 20px;
+    /* Add padding */
+    left: -20px;
+    /* Align the left border with the right side of the menu */
+    top: 0px;
+    /* Display from the top */
+}
+
+.submenu li {
+    /* Display each line of the submenu separately */
+    display: block;
+    margin-bottom: 20px;
+}
+
+.submenu li::after {
+    /* Add dashes to each line of the submenu */
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.menu li:hover .submenu {
+    display: block;
+    /* Display the word menu when the mouse hover */
+}
 
 /* Setting <body> style here*/
 ul {
@@ -96,7 +148,6 @@ a:hover {
     text-decoration: underline;
     /* Add an underscore on mouse hover */
 }
-
 
 /* Footer content*/
 .footer-content {

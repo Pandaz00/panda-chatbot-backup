@@ -5,6 +5,82 @@ body {
     padding: 0;
 }
 
+/* Create horizontal navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Navigation bar adjustion */
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: 10px;
+    z-index: 1000;
+}
+
+/* Define menu style */
+.menu li {
+    position: relative;
+    display: inline-block;
+}
+
+/* Define menu link style */
+.menu li a {
+    text-decoration: none;
+    color: #5f5f5f;
+    padding: 10px;
+    display: block;
+}
+
+/* Define submenu style */
+.submenu {
+    display: none;
+    /* Initially hide the secondary menu */
+    position: absolute;
+    background-color: #f2f2f2;
+    z-index: 1;
+    /* Make sure submenu display uppermost */
+    width: 800px;
+    height: auto;
+    padding: 20px;
+    /* Add padding */
+    left: -20px;
+    /* Align the left border with the right side of the menu */
+    top: 0px;
+    /* Display from the top */
+}
+
+.submenu li {
+    /* Display each line of the submenu separately */
+    display: block;
+    margin-bottom: 20px;
+}
+
+.submenu li::after {
+    /* Add dashes to each line of the submenu */
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.menu li:hover .submenu {
+    display: block;
+    /* Display the word menu when the mouse hover */
+}
+
 /* Sign to Panda Chatbot */
 .title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
