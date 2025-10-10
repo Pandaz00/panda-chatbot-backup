@@ -1,4 +1,4 @@
-# CSC317-Group-Project-Website
+# Group-Project-Website
 Group Project Website - in HTML & CSS
 
 This is a GROUP assignment.   Get the starting repository here:
